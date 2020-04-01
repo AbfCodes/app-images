@@ -1,0 +1,13 @@
+username = myVue1
+
+abfcodes@gmail.com
+
+password = djia+24cvv
+
+
+
+
+Client ID: 615c76b9a64c721
+
+
+Client secret:   8422dc97742fd588b6057969abbaa0f82cb2aeb1
