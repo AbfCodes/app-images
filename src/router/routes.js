@@ -12,7 +12,7 @@ export default new VueRouter({
   //takes path objs
   routes: [
     { path: '/', component: ImageList },
-    { path: '/Upload', component: UploadForm },
+    { path: '/upload', component: UploadForm },
     { path: '/oauth2/callback', component: AuthHandler }
   ]
 });
