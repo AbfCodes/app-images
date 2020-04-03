@@ -4,8 +4,12 @@
       <a class="active item">Image Storage</a>
 
       <div v-if="isLoggedIn" class="right menu">
-        <router-link to="/" exact class="ui item">Galleries</router-link>
-        <router-link to="/upload" class="ui item">Upload</router-link>
+        <router-link to="/" exact active-class="active" class="ui item"
+          >Galleries</router-link
+        >
+        <router-link to="/upload" active-class="active" class="ui item"
+          >Upload</router-link
+        >
         <a tag="a" class="ui item" @click.self="logout">Logout</a>
       </div>
       <div v-else class="right menu">

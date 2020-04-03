@@ -1,15 +1,13 @@
 <template>
-  <div class="container">
-    <div v-if="isLoggedIn" class="parent">
-      <h1>Image List :</h1>
-      <div v-for="imgs in allImages" class="flow" :key="imgs.id">
-        <img
-          :src="imgs.link"
-          style="width:290px; height:215px; border-radius: 4px;"
-          alt="user Gallery images"
-          class="zoom"
-        />
-      </div>
+  <div>
+    <div v-if="isLoggedIn" class="image-container">
+      <!-- <h1>Image List :</h1> -->
+      <img
+        v-for="imgs in allImages"
+        :key="imgs.id"
+        :src="imgs.link"
+        alt="user Gallery images"
+      />
     </div>
     <div style="text-align:center;" v-else>
       <h2>Please Login to get Started !</h2>
@@ -33,20 +31,18 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  margin: 2rem;
+.image-container {
+  column-count: 3;
+  column-gap: 2rem;
+  /* row-gap: 2rem; */
 }
-.parent {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-template-rows: repeat(5, auto);
-  grid-column-gap: 30px;
-  grid-row-gap: 15px;
+img {
+  max-width: 100%;
+  padding: 5px;
+  transition: 250ms;
 }
-.zoom:hover {
+
+img:hover {
   scale: 0.9%;
-}
-.flow {
-  grid-auto-flow: dense;
 }
 </style>

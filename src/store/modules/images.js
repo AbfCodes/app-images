@@ -18,8 +18,10 @@ const actions = {
   async uploadImages({ rootState }, images) {
     //Get access token
     const { token } = rootState.auth;
+
     //Call our API module to do the upload
-    await api.uploadImages(images, token);
+    await api.uploadImages(images, token); 
+
     //Redirect our user to ImageList
     router.push('/');
   }

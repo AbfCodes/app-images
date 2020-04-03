@@ -22,5 +22,18 @@ export default {
       }
     });
   },
-  uploadImages() {}
+  uploadImages(images, token) {
+    // Array.from(images);
+    //jS obj for retireving actual img on bits || base 64
+    const formData = new FormData();
+    const promises = [...images].map(image => {
+      formData.append('image', image);
+      return axios.post(`${ROOT_URL}/3/image`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    });
+    return Promise.all(promises);
+  }
 };
