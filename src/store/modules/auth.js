@@ -16,7 +16,6 @@ const actions = {
 
   finalizeLogin({ commit }, hash) {
     const query = qs.parse(hash.replace('#', ''));
-    console.log('finalizeLogin :', query.access_token);
     commit('setToken', query.access_token);
     window.localStorage.setItem('imgur_token', query.access_token);
     router.push('/');
@@ -25,6 +24,7 @@ const actions = {
   logout: ({ commit }) => {
     commit('setToken', null);
     window.localStorage.removeItem('imgur_token');
+    router.push('/');
   }
 };
 
